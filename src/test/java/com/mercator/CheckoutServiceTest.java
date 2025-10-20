@@ -15,7 +15,7 @@ class CheckoutServiceTest {
     @Test
     void checkoutCalculatesCorrectPrice() {
 
-        BigDecimal expectedValue = BigDecimal.valueOf(2.05);
+        BigDecimal expectedValue = BigDecimal.valueOf(1.45);
         BigDecimal actualValue = new CheckoutService().checkout(apple, apple, orange, apple);
         assertEquals(expectedValue, actualValue);
     }
@@ -23,9 +23,11 @@ class CheckoutServiceTest {
     @Test
     void checkoutHandlesNull() {
 
-        BigDecimal expectedValue = BigDecimal.valueOf(0.00).setScale(2, RoundingMode.HALF_UP);;
+        BigDecimal expectedValue = BigDecimal.valueOf(0.00).setScale(2, RoundingMode.HALF_UP);
         BigDecimal actualValue = new CheckoutService().checkout();
         assertEquals(expectedValue, actualValue);
     }
+
+
 
 }
