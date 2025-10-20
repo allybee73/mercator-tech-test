@@ -16,7 +16,7 @@ public class AppleDiscountService implements DiscountService {
                 .toList();
 
         int freeItems = productList.size() / 2;
-
+        
         return qualifyingProductPrice
                 .multiply(BigDecimal.valueOf(freeItems))
                 .setScale(2, RoundingMode.HALF_UP);
